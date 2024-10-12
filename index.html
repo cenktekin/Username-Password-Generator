@@ -1,42 +1,66 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Best Username and Password Generator by Tanweer Ashif</title>
+<title>Kullanıcı Adı ve Şifre Üreteci</title>
 <link rel="shortcut icon" type="image/x-icon" href="images/generator.png" />
 <style type="text/css">
-    
-.p1,.p2,.p3,.p4{border: 1px solid #00aeff; border-radius: 4px 4px 4px 4px; background-color: #f2f2f2;font-family:verdana, Geneva, sans-serif;font-size:13px;padding:8px;margin-top:3%;width:auto;}
-.button{
-  padding: 1px 85px;
-  font-size: 24px;
-  text-align: center;
-  cursor: pointer;
-  outline: none;
-  color: #fff;
-  background-color: #4CAF50;
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 9px #999;
-}
-.button:hover {background-color: #3e8e41}
-.button:active {
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-}    
-#inc1,#inc2{
-  padding: 0px 10px;
-  font-size: 18px;
-  box-shadow: 0 5px #999;
-  margin-bottom: 4px;F
-}
-#dec1,#dec2{
-  padding: 0px 10px;
-  font-size: 18px;
-  box-shadow: 0 5px #999;
-  margin-bottom: 4px;
-}
+
+  .p1,.p2,.p3,.p4{border: 1px solid #00aeff; border-radius: 4px 4px 4px 4px; background-color: #f2f2f2;font-family:verdana, Geneva, sans-serif;font-size:13px;padding:8px;margin-top:3%;width:auto;}
+  .button{
+    padding: 1px 85px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+  }
+  .button:hover {background-color: #3e8e41}
+  .button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }    
+  #inc1,#inc2{
+    padding: 0 10px;
+    font-size: 18px;
+    box-shadow: 0px 5px #999;
+    margin-bottom: 4px;
+  }
+  #dec1,#dec2{
+    padding: 0 10px;
+    font-size: 18px;
+    box-shadow: 0px 5px #999;
+    margin-bottom: 4px;
+  }
+  </style>
+<center>
+  <button class="button" onclick="toggleDarkMode()">Dark</button>
+</center>
+<script>
+  function toggleDarkMode() {
+    var body = document.body;
+    body.classList.toggle("dark-mode");
+  }
+</script>
+<style>
+  .dark-mode {
+    background-color: #2c2727;
+    color: #fff;
+  }
+  .dark-mode .button {
+    background-color: #a06c6c;
+    color: #fff;
+  }
+  .dark-mode .p1, .dark-mode .p2, .dark-mode .p3, .dark-mode .p4 {
+    background-color: #141813;
+    color: #fff;
+  }
 </style>
+  
 
 <script src="js/clipboard.js"></script>
 <script type="text/javascript"> 
@@ -44,7 +68,7 @@ function generate_password3(){
 var password_characters='0123456789abcde3fgh0ijklmno1pq5rstuvw6xyz'; 
 var password_length = document.getElementById("txtPasswordLength");
 if(isNaN(password_length.value) || parseInt(password_length.value)<=0 || (password_length.value.replace(/\s+$/,"")=="")){
-alert("Please enter a valid length");
+alert("Lütfen geçerli bir uzunluk girin");
 password_length.select();
 password_length.focus();
 return false; 
@@ -64,7 +88,7 @@ function generate_password4(){
 var password_characters='abcdefghijklmnopqrstuvwxyz`~!@#$%^&*()-_=+[]{};:\|<>/?"ABCDEFGHIJKLMNOPQRSTUVWXYZ12345678901234567890'; 
 var password_length = document.getElementById("txtPasswordLength2");
 if(isNaN(password_length.value) || parseInt(password_length.value)<=0 || (password_length.value.replace(/\s+$/,"")=="")){
-alert("Please enter a valid length");
+alert("Lütfen geçerli bir uzunluk girin");
 password_length.select();
 password_length.focus();
 return false; 
@@ -82,7 +106,7 @@ function incfun1()
     {
         var value=parseInt(document.getElementById('txtPasswordLength').value);
         value = isNaN(value) ? 0 : value;
-        value+=10;
+        value+=5;
         document.getElementById('txtPasswordLength').value = value;
     }
     
@@ -90,14 +114,14 @@ function decfun1()
     {
         var value=parseInt(document.getElementById('txtPasswordLength').value);
         value = isNaN(value) ? 0 : value;
-        value-=10;
+        value-=5;
         document.getElementById('txtPasswordLength').value = value;
     }
 function incfun2()
     {
         var value=parseInt(document.getElementById('txtPasswordLength2').value);
         value = isNaN(value) ? 0 : value;
-        value+=10;
+        value+=5;
         document.getElementById('txtPasswordLength2').value = value;
     }
     
@@ -105,7 +129,7 @@ function decfun2()
     {
         var value=parseInt(document.getElementById('txtPasswordLength2').value);
         value = isNaN(value) ? 0 : value;
-        value-=10;
+        value-=5;
         document.getElementById('txtPasswordLength2').value = value;
     }    
 </script>
@@ -113,30 +137,30 @@ function decfun2()
 </head>
 <body>
 <center>
-	<h2 style="align:center; color: white; background-color: #009900">Username and Password Generator designed by Tanweer Ashif @<a style="text-decoration: none;color:#00aeff" href="https://github.com/hacksploiter" target="_blank">github.com/HacksPloiter</a></h2></center>
+	<h2 style="align:center; color: rgb(158, 71, 0); background-color: #87e997">Kullanıcı Adı ve Şifre Üreteci @<a style="text-decoration: none;color:#ff0000" href="https://github.com/cenktekin/Username-Password-Generator" target="_blank">github.com/cenktekin</a></h2></center>
 <div class="p1" id="generate_random_passwords_3" name="generate_random_passwords_3" action="#" method="post">
 
 <center>	
 <p>
-<span>Characters :</span>
+<span>Karakterler :</span>
 <span style="white-space:pre";>    Alphanumeric</span>
 </p>
     
 <p>
-<span style="white-space:pre";>Length :         </span>
-<span> <input class="button" type="button" id="dec1" onclick="decfun1()" value="-10"></span>
-<span><input name="txtPasswordLength" type="number" id="txtPasswordLength" value="10" size="5"></span>
-<span> <input class="button" type="button" id="inc1" onclick="incfun1()" value="+10"></span>
+<span style="white-space:pre";>Uzunluk :         </span>
+<span> <input class="button" type="button" id="dec1" onclick="decfun1()" value="-5"></span>
+<span><input name="txtPasswordLength" type="number" id="txtPasswordLength" value="15" size="5"></span>
+<span> <input class="button" type="button" id="inc1" onclick="incfun1()" value="+5"></span>
 </p>
 
 <p>
-<span>Username :</span>
+<span>Kullanıcı Adı :</span>
 <span style="white-space:pre;">     <textarea style="margin-bottom: -5px" rows="1" cols="50" id="password2" class="pwd">&nbsp;</textarea></span>
 </p>
 
 <p>
-<span><input name="btnGeneratePassword3" type="button" class="button" id="btnGeneratePassword3" value="Create Username" onClick="javascript:generate_password3();"></span>
-<span><button class="button" type="button" data-clipboard-target="#password2">Copy Username</button></span>
+<span><input name="btnGeneratePassword3" type="button" class="button" id="btnGeneratePassword3" value="Kullanıcı Adı Oluştur" onClick="javascript:generate_password3();"></span>
+<span><button class="button" type="button" data-clipboard-target="#password2">Kullanıcı Adını Kopyala</button></span>
 </p>
 	</center>
        
@@ -150,26 +174,26 @@ function decfun2()
     
 <div class="p2" id="generate_random_passwords_4" name="generate_random_passwords_3" action="#" method="post">
 <p>
-<span>Characters :</span>
+<span>Karakterler :</span>
 <span style="white-space:pre";>      Alphanumeric and ASCII</span>
 </p>
     
 <p>
-<span style="white-space:pre";>Length :           </span>
-<span> <input class="button" type="button" id="dec2" onclick="decfun2()" value="-10"></span>
-<span><input name="txtPasswordLength" type="number" id="txtPasswordLength2" value="30" size="5"></span>
-<span> <input class="button" type="button" id="inc2" onclick="incfun2()" value="+10"></span>
+<span style="white-space:pre";>Uzunluk :           </span>
+<span> <input class="button" type="button" id="dec2" onclick="decfun2()" value="-5"></span>
+<span><input name="txtPasswordLength" type="number" id="txtPasswordLength2" value="20" size="5"></span>
+<span> <input class="button" type="button" id="inc2" onclick="incfun2()" value="+5"></span>
 </p>
     
 <p>
-<span style="white-space:pre";>Password :        </span>
+<span style="white-space:pre";>Şifre :        </span>
 <span><textarea style="margin-bottom: -5px" rows="1" cols="50" id="password3" class="pwd">&nbsp;</textarea></span>
 </p>
     
     
 <p>
-<span><input name="btnGeneratePassword3" type="button" class="button" id="btnGeneratePassword4" value="Create Password" onClick="javascript:generate_password4();"></span>
-<span><button class="button" type="button"  data-clipboard-target="#password3">Copy Password</button></span>
+<span><input name="btnGeneratePassword3" type="button" class="button" id="btnGeneratePassword4" value="Şifre Oluştur" onClick="javascript:generate_password4();"></span>
+<span><button class="button" type="button"  data-clipboard-target="#password3">Şifreyi Kopyala</button></span>
 </p>
 </div>
 </center>
@@ -177,9 +201,9 @@ function decfun2()
 <script>new Clipboard("button")</script>    
     
 
-<h2 style="text-align: center; color: #006680">Enjoy</h2>
-<h2 style="text-align: center; color: #006680">Designed and Developed by Tanweer Ashif @<a style="text-decoration: none;color:#003d4d" href="https://github.com/hacksploiter" target="_blank">github.com/HacksPloiter</a></h2>
-<div style="text-align: center; color: #006680;font-size:20px">Visit<a style="text-decoration: none;color:#003d4d" href="https://github.com/hacksploiter" target="_blank"> github.com/HacksPloiter</a></div>
+<h2 style="text-align: center; color: #006680">İyi günlerde kullanın</h2>
+<h2 style="text-align: center; color: #006680">Cenk Tekin tarafından tasarlandı ve kodlandı @<a style="text-decoration: none;color:#003d4d" href="https://github.com/cenktekin/" target="_blank">github.com/cenktekin</a></h2>
+<div style="text-align: center; color: #006680;font-size:20px">Visit<a style="text-decoration: none;color:#003d4d" href="https://github.com/cenktekin/" target="_blank"> github.com/cenktekin</a></div>
 <hr>
 </body>
 </html>
